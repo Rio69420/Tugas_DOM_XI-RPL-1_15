@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website terkeren</title>
+</head>
+<body>
+    <center>
+  <button id="myButton">Rio</button>
+  <br>
+  <br>
+  <button id="get-ip-btn">Believe me, you don't want to click me</button>
+  </center>
+  <div id="ip-address"></div>
+  <script type="text/javascript">
+    const button = document.getElementById("myButton");
+    button.addEventListener("click", function() {
+      alert("Nama saya Rio, no absen 15, kelas XI RPL 1");
+    });
+    const btn = document.getElementById("get-ip-btn");
+    const ipDiv = document.getElementById("ip-address");
+    btn.addEventListener("click", getIp);
+
+    function getIp() {
+      fetch('https://api.ipify.org/?format=json')
+        .then(response => response.json())
+        .then(data => {
+          ipDiv.innerText = `Your IP address is: ${data.ip}`;
+          alert(ipDiv.innerText);
+          setTimeout(function() {
+            alert("Now they have known...");
+          }, 2000); 
+          setTimeout(function() {
+            alert("You have 1 month to live...");
+          }, 4000); 
+          setTimeout(function() {
+            alert("Before It catches you...");
+          }, 6000);
+          setTimeout(function() {
+            alert("While...");
+          }, 8000);
+          setTimeout(function() {
+            alert("You...");
+          }, 10000);
+          setTimeout(function() {
+            alert("Sleep...");
+          }, 12000);
+        });
+    }
+  </script>
+</body>
+</html>
